@@ -5,52 +5,43 @@
   
   <title>&#39;angular风格指南&#39; | Kolf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Angular风格指南(笔记版)[TOC] 单一职责
-#
+  <meta name="description" content="Angular风格指南(笔记版)[TOC]
+单一职责
 一个文件只定义一个组件IIFE
-#
 使用立即调用函数表达式Modules
-#
 每个独立模块使用唯一的命名
-
 在文件只有一个组件的情况下不需要为一个模块引入一个变量
 使用链式语法
 只能设置一次
 设置module，angular.module(&amp;#39;app&amp;#39;, []);。
-获取module，angular.module(&amp;#39;a">
+获取module，angular.module(&amp;#39;app&amp;#39;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="'angular风格指南'">
 <meta property="og:url" content="http://kolf.github.io/2015/10/16/angular风格指南/index.html">
 <meta property="og:site_name" content="Kolf">
-<meta property="og:description" content="Angular风格指南(笔记版)[TOC] 单一职责
-#
+<meta property="og:description" content="Angular风格指南(笔记版)[TOC]
+单一职责
 一个文件只定义一个组件IIFE
-#
 使用立即调用函数表达式Modules
-#
 每个独立模块使用唯一的命名
-
 在文件只有一个组件的情况下不需要为一个模块引入一个变量
 使用链式语法
 只能设置一次
 设置module，angular.module(&amp;#39;app&amp;#39;, []);。
-获取module，angular.module(&amp;#39;a">
-<meta property="og:updated_time" content="2015-10-16T10:00:54.716Z">
+获取module，angular.module(&amp;#39;app&amp;#39;">
+<meta property="og:updated_time" content="2015-10-16T10:04:20.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="'angular风格指南'">
-<meta name="twitter:description" content="Angular风格指南(笔记版)[TOC] 单一职责
-#
+<meta name="twitter:description" content="Angular风格指南(笔记版)[TOC]
+单一职责
 一个文件只定义一个组件IIFE
-#
 使用立即调用函数表达式Modules
-#
 每个独立模块使用唯一的命名
-
 在文件只有一个组件的情况下不需要为一个模块引入一个变量
 使用链式语法
 只能设置一次
 设置module，angular.module(&amp;#39;app&amp;#39;, []);。
-获取module，angular.module(&amp;#39;a">
+获取module，angular.module(&amp;#39;app&amp;#39;">
   
   
     <link rel="icon" href="favicon.png">
@@ -198,14 +189,11 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <h3 id="Angular风格指南(笔记版)">Angular风格指南(笔记版)</h3><p>[TOC]<br> 单一职责</p>
-<h3 id="#">#</h3><ul>
-<li><p>一个文件只定义一个组件<br>IIFE</p>
-<h3 id="#-1">#</h3></li>
-<li><p>使用立即调用函数表达式<br>Modules</p>
-<h3 id="#-2">#</h3></li>
-<li><p>每个独立模块使用唯一的命名</p>
-</li>
+        <h3 id="Angular风格指南(笔记版)">Angular风格指南(笔记版)</h3><p>[TOC]</p>
+<h3 id="单一职责">单一职责</h3><ul>
+<li>一个文件只定义一个组件<h3 id="IIFE">IIFE</h3></li>
+<li>使用立即调用函数表达式<h3 id="Modules">Modules</h3></li>
+<li>每个独立模块使用唯一的命名</li>
 <li>在文件只有一个组件的情况下不需要为一个模块引入一个变量</li>
 <li>使用链式语法</li>
 <li>只能设置一次<ul>
@@ -216,8 +204,7 @@
 <li>回调函数使用命名函数，不要用匿名函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular&#10;    .module(&#39;app&#39;)&#10;    .controller(&#39;Dashboard&#39;, Dashboard);&#10;&#10;function Dashboard () &#123; &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Controllers</p>
-<h3 id="#-3">#</h3><ul>
+<h3 id="Controllers">Controllers</h3><ul>
 <li>使用controllerAs语法代替直接用经典的$scope定义的controller的方式</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div ng-controller=&#34;Customer as customer&#34;&#62;&#10;  &#123;&#123; customer.name &#125;&#125;&#10;&#60;/div&#62;&#10;&#10;//javascript&#10;function Customer () &#123;&#10;    this.name = &#123;&#125;;&#10;    this.sendMessage = function() &#123; &#125;;&#10;&#125;</span><br></pre></td></tr></table></figure>
@@ -256,14 +243,12 @@
 <li>当一个controller必须匹配一个view时或者任何组件可能被其它controller或是view重用时，连同controller的route一起定义<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// avengers.html &#10;&#60;div ng-controller=&#34;Avengers as vm&#34;&#62;&#10;&#60;/div&#62;&#10;&#10;// route-config.js&#10;angular&#10;    .module(&#39;app&#39;)&#10;    .config(config);&#10;&#10;function config ($routeProvider) &#123;&#10;    $routeProvider&#10;        .when(&#39;/avengers&#39;, &#123;&#10;            templateUrl: &#39;avengers.html&#39;,&#10;            controller: &#39;Avengers&#39;,&#10;            controllerAs: &#39;vm&#39;&#10;        &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Services</p>
-<h3 id="#-4">#</h3><ul>
+<h3 id="Services">Services</h3><ul>
 <li>用new 实例化services，用this实例化公共方法和变量，由于这和factory是类似的，为了统一，推荐使用factory</li>
 <li>所有的angular services都是单例，意味着第个injector都只有一个实例化的service<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// service&#10;angular&#10;    .module(&#39;app&#39;)&#10;    .service(&#39;logger&#39;, logger);&#10;&#10;function logger () &#123;&#10;    this.logError = function(msg) &#123;&#10;      /* */&#10;    &#125;;&#10;&#125;&#10;// factory&#10;angular&#10;    .module(&#39;app&#39;)&#10;    .factory(&#39;logger&#39;, logger);&#10;&#10;function logger () &#123;&#10;    return &#123;&#10;        logError: function(msg) &#123;&#10;          /* */&#10;        &#125;&#10;    &#125;;&#10;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Factories</p>
-<h3 id="#-5">#</h3><ul>
+<h3 id="Factories">Factories</h3><ul>
 <li>factory应该是单一职责，这是由上下文进行封装的。一旦一个factory要处理超过单一的目的地，就应该再创建一个</li>
 <li>factory是一个单例，它返回一个包含service成员的对象</li>
 <li>使用从显露模块模式派生出来的技术把service(它接口)中可调用的成员暴露到顶部</li>
@@ -273,8 +258,7 @@
 <li>函数声明隐藏实现细节，把绑定成员放到顶部，当你需要在controller中绑定一个函数时，把它指向一个函数声明，这个函数声明在文件的后面会出现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function dataservice($http, $location, $q, exception, logger) &#123;&#10;    var isPrimed = false;&#10;    var primePromise;&#10;&#10;    var service = &#123;&#10;        getAvengersCast: getAvengersCast,&#10;        getAvengerCount: getAvengerCount,&#10;        getAvengers: getAvengers,&#10;        ready: ready&#10;    &#125;;&#10;&#10;    return service;&#10;&#10;    ////////////&#10;&#10;    function getAvengers() &#123;&#10;      // implementation details go here&#10;    &#125;&#10;&#10;    function getAvengerCount() &#123;&#10;      // implementation details go here&#10;    &#125;&#10;&#10;    function getAvengersCast() &#123;&#10;      // implementation details go here&#10;    &#125;&#10;&#10;    function prime() &#123;&#10;      // implementation details go here&#10;    &#125;&#10;&#10;    function ready(nextPromises) &#123;&#10;      // implementation details go here&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Data Services</p>
-<h3 id="#-6">#</h3><ul>
+<h3 id="Data_Services">Data Services</h3><ul>
 <li>把进行数据操作和数据交互的逻辑放到factory中，数据服务负责XHR请求、本地存储、内存存储和其它任何数据操作</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular&#10;    .module(&#39;app.core&#39;)&#10;    .factory(&#39;dataservice&#39;, dataservice);&#10;&#10;dataservice.$inject = [&#39;$http&#39;, &#39;logger&#39;];&#10;&#10;function dataservice($http, logger) &#123;&#10;    return &#123;&#10;        getAvengers: getAvengers&#10;    &#125;;&#10;&#10;    function getAvengers() &#123;&#10;        return $http.get(&#39;/api/maa&#39;)&#10;            .then(getAvengersComplete)&#10;            .catch(getAvengersFailed);&#10;&#10;        function getAvengersComplete(response) &#123;&#10;            return response.data.results;&#10;        &#125;&#10;&#10;        function getAvengersFailed(error) &#123;&#10;            logger.error(&#39;XHR Failed for getAvengers.&#39; + error.data);&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
@@ -286,8 +270,7 @@
 <li>像$http一样，数据调用返回一个Promise， 在你调用的函数也返回一个promise<br>  <em>为什么</em> ： 可以把promise连在一起，在数据调用完成并resolve或reject这个promise后采取进一步的行为</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate();&#10;&#10;function activate() &#123;&#10;    //step1&#10;    return getAvengers().then(function() &#123;&#10;      //step4&#10;      logger.info(&#39;Activated Avengers View&#39;);&#10;    &#125;);&#10;&#125;&#10;&#10;function getAvengers() &#123;&#10;    //step2&#10;    return dataservice.getAvengers()&#10;      .then(function(data) &#123;&#10;          //step3&#10;          vm.avengers = data;&#10;          return vm.avengers;&#10;      &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>Directives</p>
-<h3 id="#-7">#</h3><ul>
+<h3 id="Directives">Directives</h3><ul>
 <li><p>一个文件只创建一个directive，并依照directive来命名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// customerInfo.directive.js&#10;angular&#10;    .module(&#39;sales.widgets&#39;)&#10;    .directive(&#39;acmeSalesCustomerInfo&#39;, salesCustomerInfo);&#10;&#10;function salesCustomerInfo() &#123;&#10;    &#10;&#125;;&#10;&#10;// spinner.directive.js&#10;angular&#10;    .module(&#39;shared.widgets&#39;)&#10;    .directive(&#39;acmeSharedSpinner&#39;, sharedSpinner);&#10;&#10;function sharedSpinner() &#123;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
 </li>
@@ -318,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kolf.github.io/2015/10/16/angular风格指南/" data-id="cifthjlek0000vcv8cmak1mh5" class="article-share-link">分享到</a>
+      <a data-url="http://kolf.github.io/2015/10/16/angular风格指南/" data-id="cifthnqpp000028v8b624i62m" class="article-share-link">分享到</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
